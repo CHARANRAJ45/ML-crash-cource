@@ -4,7 +4,7 @@
 This project aims to analyze and predict individual medical insurance charges using various personal attributes such as age, sex, BMI, number of children, smoking status, and region. The goal is to understand the factors influencing insurance costs and build a robust prediction model.
 
 ## 2. Dataset
-The dataset used for this analysis is `insurance (1).csv`, which contains 1338 entries and 7 features:
+The dataset used for this analysis is `insurance (1).csv`,Heart.CSV  which contains 1338 entries and 7 features:
 - `age`: Age of the primary beneficiary (integer)
 - `sex`: Gender of the primary beneficiary (male/female)
 - `bmi`: Body mass index (BMI) (float)
