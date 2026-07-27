@@ -61,3 +61,22 @@ A Chi-squared test was performed to examine the association between various cate
 ## 7. How to Run
 1. Upload the `insurance (1).csv` file to your Colab environment.
 2. Run all cells in the notebook sequentially.
+
+
+
+
+
+
+
+
+
+
+# Heart Disease Prediction Notebook
+
+This notebook performs an exploratory data analysis (EDA) and data preprocessing on a heart disease dataset. The steps include:
+
+1.  **Data Loading**: Loading the `heart.csv` dataset.
+2.  **Initial Data Exploration**: Examining columns, data types, descriptive statistics, and checking for duplicates and missing values.
+3.  **Data Cleaning**: Handling zero values in 'Cholesterol' and 'RestingBP' by replacing them with the mean of non-zero values.
+4.  **Visualizations**: Generating various plots to understand data distributions and relationships.
+5.  **Feature Engineering**: Encoding categorical variables using one-hot encoding and scaling numerical features using `StandardScaler`.
