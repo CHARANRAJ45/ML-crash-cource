@@ -1,82 +1,123 @@
-# Insurance Charges Prediction Project
+<div align="center">
 
-## 1. Introduction
-This project aims to analyze and predict individual medical insurance charges using various personal attributes such as age, sex, BMI, number of children, smoking status, and region. The goal is to understand the factors influencing insurance costs and build a robust prediction model.
+# 🤖 Supervised Learning Practice
 
-## 2. Dataset
-The dataset used for this analysis is `insurance (1).csv`,Heart.CSV  which contains 1338 entries and 7 features:
-- `age`: Age of the primary beneficiary (integer)
-- `sex`: Gender of the primary beneficiary (male/female)
-- `bmi`: Body mass index (BMI) (float)
-- `children`: Number of children covered by health insurance (integer)
-- `smoker`: Smoking status (yes/no)
-- `region`: Residential area in the US (northeast, northwest, southeast, southwest)
-- `charges`: Individual medical costs billed by health insurance (float)
+### Hands-on machine learning projects covering classification, regression, ensembling & hyperparameter tuning
 
-## 3. Data Preprocessing
-The following steps were performed to clean and prepare the data:
-- **Duplicate Handling**: One duplicate entry was identified and removed.
-- **Categorical Feature Encoding**:
-    - `sex` was mapped to `is_female` (0 for male, 1 for female).
-    - `smoker` was mapped to `is_smoker` (0 for no, 1 for yes).
-    - `region` was one-hot encoded, creating binary columns for each region (`region_northwest`, `region_southeast`, `region_southwest`), dropping the first to avoid multicollinearity.
-- **Feature Engineering (BMI Category)**:
-    - A new categorical feature `bmi_category` was created from `bmi` (underweight, healthy, overweight, obese).
-    - `bmi_category` was then one-hot encoded into `bmi_category_healthy`, `bmi_category_overweight`, and `bmi_category_obese`, dropping the first category.
-- **Data Type Conversion**: All boolean (True/False) columns resulting from one-hot encoding were converted to integer (0/1).
-- **Feature Scaling**: Numerical features (`age`, `bmi`, `children`) were standardized using `StandardScaler` to have a mean of 0 and a standard deviation of 1.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
-## 4. Exploratory Data Analysis (EDA)
-Initial EDA involved:
-- **Shape and Information**: Checked the dimensions and data types of the dataset.
-- **Descriptive Statistics**: Summarized numerical features.
-- **Missing Values**: Confirmed no missing values in the dataset.
-- **Visualizations**:
-    - Histograms for numerical columns (`age`, `bmi`, `children`, `charges`) to observe their distributions.
-    - Count plots for categorical columns (`children`, `sex`, `smoker`) to see their frequencies.
-    - Box plots for numerical columns to identify outliers.
-    - A heatmap showing correlations between numerical features.
+![GitHub last commit](https://img.shields.io/github/last-commit/CHARANRAJ45/Supervised-Learning-Practice?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/CHARANRAJ45/Supervised-Learning-Practice?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 
-## 5. Feature Analysis
+</div>
 
-### 5.1. Pearson Correlation Analysis
-Pearson correlation was calculated between several features and `charges` to identify linear relationships. Key findings include:
-- `charges` is perfectly correlated with itself (1.0).
-- `is_smoker` has a strong positive correlation with `charges` (0.79).
-- `age` and `bmi` also show positive correlations (0.30 and 0.20 respectively).
-- `bmi_category_obese` shows a positive correlation (0.20).
-- `is_female`, `bmi_category_healthy`, and `bmi_category_overweight` show slight negative correlations.
+---
 
-### 5.2. Chi-squared Test for Categorical Associations
-A Chi-squared test was performed to examine the association between various categorical features and `is_smoker`.
-- `is_female` and `region_southeast` show a statistically significant association with `is_smoker` (p-values < 0.05).
-- `region_northwest`, `region_southwest`, and the `bmi_category` features did not show a statistically significant association with `is_smoker`.
+## 📖 Table of Contents
 
-## 6. Next Steps
-- **Model Building**: Implement various regression models (e.g., Linear Regression, Random Forest, Gradient Boosting) to predict insurance charges.
-- **Model Evaluation**: Evaluate models using appropriate metrics (e.g., R-squared, MAE, RMSE).
-- **Hyperparameter Tuning**: Optimize model performance using techniques like GridSearchCV or RandomizedSearchCV.
-- **Feature Importance**: Analyze feature importance to understand which features contribute most to the prediction.
+- [Overview](#-overview)
+- [Repository Structure](#-repository-structure)
+- [Datasets Used](#-datasets-used)
+- [Key Concepts Practiced](#-key-concepts-practiced)
+- [Tech Stack](#️-tech-stack)
+- [How to Run](#-how-to-run)
+- [Roadmap](#-roadmap)
 
-## 7. How to Run
-1. Upload the `insurance (1).csv` file to your Colab environment.
-2. Run all cells in the notebook sequentially.
+---
+
+## 🔎 Overview
+
+This repository is a structured collection of notebooks and scripts built while learning **Supervised Machine Learning**. It moves from basic classification models to more advanced concepts like **ensembling** and **hyperparameter optimization**, alongside solid **exploratory data analysis (EDA)** practice on real-world datasets.
+
+> 🎯 Goal: build strong intuition for the full supervised learning workflow — from raw data → EDA → model building → tuning → evaluation.
+
+---
+
+## 🗂️ Repository Structure
+
+```
+📦 Supervised-Learning-Practice
+├── 📓 TitanicModels.ipynb          # Classification models on Titanic survival data
+├── 📓 Ensemble_learning.ipynb      # Bagging, Boosting & Random Forest techniques
+├── 📓 GridSearchCV.ipynb           # Hyperparameter tuning & cross-validation
+├── 📓 insurence_data_EDA.ipynb     # EDA on medical insurance cost dataset
+├── 🐍 heart_eda.py                 # EDA script for heart disease dataset
+├── 📊 heart.csv                    # Heart disease dataset
+├── 📊 insurance (1).csv            # Insurance cost dataset
+└── 📄 README.md
+```
+
+---
+
+## 📊 Datasets Used
+
+| Dataset | Task Type | Description |
+|---|---|---|
+| 🚢 **Titanic** | Classification | Predict passenger survival based on demographic & travel features |
+| ❤️ **Heart Disease** | Classification / EDA | Explore health indicators correlated with heart disease risk |
+| 💰 **Insurance** | Regression / EDA | Analyze factors driving medical insurance charges |
+
+---
+
+## 🧠 Key Concepts Practiced
+
+- ✅ **Data Cleaning & Preprocessing** — handling missing values, encoding categorical features
+- ✅ **Exploratory Data Analysis** — distributions, correlations, outlier detection, visualizations
+- ✅ **Classification Modeling** — Logistic Regression, Decision Trees, KNN, etc.
+- ✅ **Ensemble Learning** — Bagging, Boosting, Random Forests for improved accuracy
+- ✅ **Hyperparameter Tuning** — GridSearchCV for systematic model optimization
+- ✅ **Model Evaluation** — accuracy, precision/recall, confusion matrices, cross-validation
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tools |
+|---|---|
+| **Language** | Python |
+| **Data Handling** | Pandas, NumPy |
+| **Visualization** | Matplotlib, Seaborn |
+| **Modeling** | Scikit-learn |
+| **Environment** | Jupyter Notebook |
+
+---
+
+## ▶️ How to Run
+
+```bash
+# Clone the repository
+git clone https://github.com/CHARANRAJ45/Supervised-Learning-Practice.git
+cd Supervised-Learning-Practice
+
+# Install dependencies
+pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+
+# Launch Jupyter
+jupyter notebook
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Classification models (Titanic)
+- [x] EDA practice (Heart Disease, Insurance)
+- [x] Ensemble learning techniques
+- [x] Hyperparameter tuning with GridSearchCV
+- [ ] Unsupervised learning (clustering, dimensionality reduction) — *coming next*
+- [ ] Deep learning fundamentals
+
+---
 
 
 
+<div align="center">
 
+⭐ *If you found this useful, consider giving the repo a star!* ⭐
 
-
-
-
-
-
-# Heart Disease Prediction Notebook
-
-This notebook performs an exploratory data analysis (EDA) and data preprocessing on a heart disease dataset. The steps include:
-
-1.  **Data Loading**: Loading the `heart.csv` dataset.
-2.  **Initial Data Exploration**: Examining columns, data types, descriptive statistics, and checking for duplicates and missing values.
-3.  **Data Cleaning**: Handling zero values in 'Cholesterol' and 'RestingBP' by replacing them with the mean of non-zero values.
-4.  **Visualizations**: Generating various plots to understand data distributions and relationships.
-5.  **Feature Engineering**: Encoding categorical variables using one-hot encoding and scaling numerical features using `StandardScaler`.
+</div>
