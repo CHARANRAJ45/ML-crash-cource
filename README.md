@@ -109,7 +109,7 @@ jupyter notebook
 - [x] EDA practice (Heart Disease, Insurance)
 - [x] Ensemble learning techniques
 - [x] Hyperparameter tuning with GridSearchCV
-- [ ] Unsupervised learning (clustering, dimensionality reduction) — *coming next*
+- [x] Unsupervised learning (clustering, dimensionality reduction) — *coming next*
 - [ ] Deep learning fundamentals
 
 ---
